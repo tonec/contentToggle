@@ -17,7 +17,7 @@
 		}, options );
 
 		var container = self.parents( options.container ),
-			actionOpen, actionClose, isanimated;
+			actionOpen, actionClose, isanimated, key;
 
 		// Initial content to show and/or hide
 		switch ( options.init ) {
@@ -26,7 +26,7 @@
 			break;
 
 			case 'first':
-				for ( var key in options.pairs ) {
+				for ( key in options.pairs ) {
 					if ( options.pairs.hasOwnProperty( key ) && typeof ( key ) !== 'function' ) {
 						if ( options.pairs[ key ] !== CR.util.firstInObject( options.pairs ) ) {
 							contentControl( $( options.pairs[ key ], container ), 'close' );
@@ -36,7 +36,7 @@
 			break;
 
 			case 'all':
-				for ( var key in options.pairs ) {
+				for ( key in options.pairs ) {
 					if ( options.pairs.hasOwnProperty( key ) && typeof ( key ) !== 'function' ) {
 						contentControl( $( options.pairs[ key ], container ), 'close' );
 					}
